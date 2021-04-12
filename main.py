@@ -16,6 +16,7 @@ def absolute_path_test():
 
         #data = json.load(file)
         authkey = json.load(file)
+        print(authkey)
         return authkey["authkey"]
     #auth_path.read_text())
 
@@ -33,3 +34,5 @@ if __name__ == '__main__':
     print(absolute_path_test())
     request = requests.get(URL)
     print(request)
+    data = request.json()
+    print(data)
