@@ -18,6 +18,9 @@ def absolute_path_test():
 # globals
 authkey = absolute_path_test()
 api_key_url = '?api_key='
+accountID = 'ldmTvN5T3T-3GLzJoZ-OggPOiFuYI-aWVkaVFs3QtBniq3wE-NBsl3Dp'
+summonerID = 'gG_Y0RKhz3nLMMu8aNhnGjni0svFGaA02lyfkKLsN-CMNrKB'
+ppuuid = 'UMGFI8uYS72cjgB2GAe24p1jFZ58-5TeBXkVC0-K3LBQAEDyzcltSrS4pWC_4Cvg4dSuy3ADXSwccQ'
 
 if __name__ == '__main__':
     URL = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/sparked_prophet?api_key=' \
@@ -35,6 +38,19 @@ if __name__ == '__main__':
     print('****')
     print(URL)
     request = requests.get(URL)
+    print(request)
+    data = request.json()
+    #   print(data)
+
+    #match_url = 'https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/' + summonerID \
+    #            + api_key_url + authkey
+
+    match_url = 'https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/' + summonerID \
+                + api_key_url + authkey
+
+    print('\n*********\n')
+    print(match_url)
+    request = requests.get(match_url)
     print(request)
     data = request.json()
     print(data)
