@@ -54,3 +54,13 @@ if __name__ == '__main__':
     print(request)
     data = request.json()
     print(data)
+
+    #calls name of active player
+    name = requests.get('https://127.0.0.1:2999/liveclientdata/activeplayername')
+    live_data = requests.get('https://127.0.0.1:2999/liveclientdata/' + name)
+    print('\n*********\n')
+    print(match_url)
+    request = requests.get(match_url)
+    print(request)
+    data = request.json()
+    print(data)
